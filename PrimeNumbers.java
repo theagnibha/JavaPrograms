@@ -1,28 +1,30 @@
-```
-
+package MethodPractice;
 import java.util.Scanner;
 
-class PrimeNumbers
-{
-	public static void main(String[] args)
-	{
-		int n;
-		int p;
-		Scanner s=new Scanner(System.in);
-		System.out.println("Enter a number: ");
-		n=s.nextInt();
-		for(int i=2;i<n;i++)
-		{
-			p=0;
-			for(int j=2;j<i;j++)
-			{
-				if(i%j==0)
-				p=1;
+public class FindPrimeNumber {
+	
+	static boolean isPrime(int n) {
+		for(int i=2; i<n/2; i++) {
+			if(n%i==0) {
+				return false;
 			}
-			if(p==0)
-				System.out.println(i);
 		}
+		return true;
 	}
-}
 
-```
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a no: ");
+		int n = sc.nextInt();
+		
+		
+		if(isPrime(n)) {
+			System.out.println(n+" is a prime number");
+		}else {
+			System.out.println(n+" is not a prime number");
+		}
+		
+	}
+
+}
